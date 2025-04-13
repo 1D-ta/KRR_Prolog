@@ -1,0 +1,32 @@
+# Medical Diagnosis Expert System – Documentation and Results
+
+---
+
+## 🩺 Problem Statement
+
+This project implements a **rule-based medical diagnosis expert system** using Prolog. The aim is to replicate the reasoning of a basic clinical consultation by evaluating user-reported symptoms and estimating the likelihood of various common diseases.
+
+---
+
+## 🧠 What We Are Doing – System Workflow and Logic
+
+This system uses a **rule-based inference algorithm**, specifically **forward chaining**, to derive diagnoses based on user input. It operates through the following structured pipeline:
+
+---
+
+### 1. 👤 User Interaction and Symptom Collection
+
+The system initiates with the `start.` query.
+
+- **Session Reset**:  
+  `clear_data/0` clears old knowledge using dynamic facts (`retractall(known(_, _))`).
+  
+- **Diagnosis Initiation**:  
+  `diagnose/0` calls the necessary components to collect input and generate results.
+
+#### 🔍 Symptom Query Process
+
+Implemented via the predicate `ask_symptom/2`, each symptom is queried as follows:
+
+```prolog
+Do you have <symptom>? (yes./no./why./help.)
